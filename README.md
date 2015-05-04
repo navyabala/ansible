@@ -166,3 +166,4 @@ Indentation for the code may be wrong here refer below link  of my <a href="htt
 
  ansible-playbook linux_users.yml   --extra-vars "username=xxxxx  password=yyyy admin=yes action=create_user remote=192.168.249.134" --user anjna -k --sudo -K
 
+ ansible-playbook postgres_users.yml --extra-vars "remote=192.168.249.134  loginuser=tom loginpassword=password username=akash userpassword=akash"
