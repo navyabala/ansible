@@ -1,0 +1,6 @@
+---
+- hosts: thinkingmonster
+  user: root
+
+  roles:
+  - postgres

@@ -1,0 +1,8 @@
+---
+
+- name: Installing checking for package python-psycopg2
+  yum: name=python-psycopg2 state=present
+
+- name: Creating postgres user
+  postgresql_user:
+
