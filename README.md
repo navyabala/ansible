@@ -163,3 +163,6 @@ Indentation for the code may be wrong here refer below link  of my <a href="htt
 &nbsp;
 
 &nbsp;
+
+ ansible-playbook linux_users.yml   --extra-vars "username=xxxxx  password=yyyy admin=yes action=create_user remote=192.168.249.134" --user anjna -k --sudo -K
+
