@@ -1,7 +1,7 @@
 ---
-hosts: thinkingmonster
-user:root
+- hosts: app-servers
+  remote_user: athakur
 
-roles:
-- epel
-- nginx
+  roles:
+   - { role: epel }
+   - { role: nginx }
