@@ -2,6 +2,6 @@
 hosts: thinkingmonster
 user:root
 
-tasks:
-- name: installation of nginx
-  pkg:yum name=nginx state=present
+roles:
+- epel
+- nginx
