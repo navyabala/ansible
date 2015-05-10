@@ -1,6 +1,0 @@
----
-- hosts: app-servers 
-  remote_user: root
-  tasks:
-  - name: installation of nginx
-    yum: pkg=nginx state=present

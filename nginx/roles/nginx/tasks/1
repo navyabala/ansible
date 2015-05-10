@@ -1,4 +1,0 @@
----
-
-- name: installation of nginx
-  pkg: yum name=nginx state=present
