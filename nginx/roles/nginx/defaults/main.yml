@@ -1,6 +1,6 @@
 ---
 user: nginx
-worker_processes: 1
+worker_processes: 5
 worker_connections: 1024
 autoindex: on
 sendfile: on
