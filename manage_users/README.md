@@ -56,7 +56,7 @@ cd ../ usercreate &amp;&amp; mkdir defaults files handlers meta tasks templates 
 - Lets build our roles now .For now we will be using only the task directory of our roles in this example and will write main.yml file inside each role.We don’t need other directories for this example but will be utilizing all in our next examples.
 
 - Create main.yml file inside the “usercreate/tasks” with content as shown below.
--
+
 <a href="https://thinkingmonster.files.wordpress.com/2015/04/role1.png"><img class=" size-full wp-image-432 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role1.png" alt="role1" width="529" height="198" /></a>
 - Create main.yml file inside the “userdel/tasks” with content as shown below.
 
@@ -92,10 +92,8 @@ roles:
 
 So this is the way how variables are passed from the command line across the site.yml and to the roles finally.
 
-<span style="text-decoration: underline;"><em>createuser/tasks/main.yml</em></span>
 
-
-Below diagram shows the use of <b>manage-users</b> playbook
+<h6>Below diagram shows the use of <b>manage-users</b> playbook</h6>
 <div align="center"> <img src="https://github.com/thinkingmonster/ansible/blob/master/usermanagement.png" alt="usermanagement"></div> 
 
 <h6>Playbook usages</h6>
