@@ -34,7 +34,7 @@ So “usercreate ” and “userdel ” are the two roles created .Below is the 
 -- Any template tasks can reference files in roles/x/templates/ without having to path them relatively or absolutely
 -- Any include tasks can reference files in roles/x/tasks/ without having to path them relatively or absolutely
 
-<h6>Creating User_manage playbook<h6>
+<h6>Creating User_manage playbook</h6>
 
 Here I will be explaining as how to create user_manage playbook with “usercreate” and “userdel” roles each.
 
