@@ -56,7 +56,8 @@ cd ../ usercreate &amp;&amp; mkdir defaults files handlers meta tasks templates 
 - Lets build our roles now .For now we will be using only the task directory of our roles in this example and will write main.yml file inside each role.We don’t need other directories for this example but will be utilizing all in our next examples.
 
 - Create main.yml file inside the “usercreate/tasks” with content as shown below.
-<a href="https://thinkingmonster.files.wordpress.com/2015/04/role1.png"><img class=" size-full wp-image-432 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role1.png" alt="role1" width="529" height="198" /></a></p>
+-
+<a href="https://thinkingmonster.files.wordpress.com/2015/04/role1.png"><img class=" size-full wp-image-432 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role1.png" alt="role1" width="529" height="198" /></a>
 - Create main.yml file inside the “userdel/tasks” with content as shown below.
 
 <a href="https://thinkingmonster.files.wordpress.com/2015/04/role2.png"><img class=" size-full wp-image-433 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role2.png" alt="role2" width="442" height="87" /></a>
@@ -65,7 +66,7 @@ cd ../ usercreate &amp;&amp; mkdir defaults files handlers meta tasks templates 
 
 <a href="https://thinkingmonster.files.wordpress.com/2015/04/role3.png"><img class=" size-full wp-image-434 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role3.png" alt="role3" width="529" height="98" /></a>
 
-<h6>Explaining the concept<h6>
+<h6>Explaining the concept</h6>
 <span style="text-decoration: underline;"><em>site.yml</em></span>
 
 - When creating a user using my play book I will be running my play book with below command
