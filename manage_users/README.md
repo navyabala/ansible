@@ -25,50 +25,50 @@ In side any playbook, create below mentioned directories as I have created in my
 └── site.yml
 ```
 So “usercreate ” and “userdel ” are the two roles created .Below is the short description regarding each directory of the role.<br>
--- If roles/x/tasks/main.yml exists, tasks listed therein will be added to the play
--- If roles/x/handlers/main.yml exists, handlers listed therein will be added to the play
--- If roles/x/vars/main.yml exists, variables listed therein will be added to the play
--- If roles/x/meta/main.yml exists, any role dependencies listed therein will be added to the list of roles (1.3 and later)
--- Any copy tasks can reference files in roles/x/files/ without having to path them relatively or absolutely
--- Any script tasks can reference scripts in roles/x/files/ without having to path them relatively or absolutely
--- Any template tasks can reference files in roles/x/templates/ without having to path them relatively or absolutely
--- Any include tasks can reference files in roles/x/tasks/ without having to path them relatively or absolutely
+- If roles/x/tasks/main.yml exists, tasks listed therein will be added to the play
+- If roles/x/handlers/main.yml exists, handlers listed therein will be added to the play
+- If roles/x/vars/main.yml exists, variables listed therein will be added to the play
+- If roles/x/meta/main.yml exists, any role dependencies listed therein will be added to the list of roles (1.3 and later)
+- Any copy tasks can reference files in roles/x/files/ without having to path them relatively or absolutely
+- Any script tasks can reference scripts in roles/x/files/ without having to path them relatively or absolutely
+- Any template tasks can reference files in roles/x/templates/ without having to path them relatively or absolutely
+- Any include tasks can reference files in roles/x/tasks/ without having to path them relatively or absolutely
 
 <h6>Creating User_manage playbook</h6>
 
 Here I will be explaining as how to create user_manage playbook with “usercreate” and “userdel” roles each.
 
--- Create a “user_manage”empty playbook directory and create site.yml file inside it.
+- Create a “user_manage”empty playbook directory and create site.yml file inside it.
 ```
 mkdir user_manage
 cd user_manage
 touch site.yml
 ```
--- Create a “roles” directory inside “user_manage” with “usercreate” and “userdel” directories inside it.
+- Create a “roles” directory inside “user_manage” with “usercreate” and “userdel” directories inside it.
 ```
 mkdir usercreate userdel
 ```
--- Inside each role create below sub-directories
+- Inside each role create below sub-directories
 ```
 cd userdel &amp;&amp; mkdir defaults files handlers meta tasks templates vars
 cd ../ usercreate &amp;&amp; mkdir defaults files handlers meta tasks templates vars
 ```
--- Lets build our roles now .For now we will be using only the task directory of our roles in this example and will write main.yml file inside each role.We don’t need other directories for this example but will be utilizing all in our next examples.
+- Lets build our roles now .For now we will be using only the task directory of our roles in this example and will write main.yml file inside each role.We don’t need other directories for this example but will be utilizing all in our next examples.
 
--- Create main.yml file inside the “usercreate/tasks” with content as shown below.
+- Create main.yml file inside the “usercreate/tasks” with content as shown below.
 <a href="https://thinkingmonster.files.wordpress.com/2015/04/role1.png"><img class=" size-full wp-image-432 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role1.png" alt="role1" width="529" height="198" /></a></p>
--- Create main.yml file inside the “userdel/tasks” with content as shown below.
+- Create main.yml file inside the “userdel/tasks” with content as shown below.
 
 <a href="https://thinkingmonster.files.wordpress.com/2015/04/role2.png"><img class=" size-full wp-image-433 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role2.png" alt="role2" width="442" height="87" /></a>
 
--- Once main.yml files are created inside the roles add below data to site.yml file inside “manage_users” playbook
+- Once main.yml files are created inside the roles add below data to site.yml file inside “manage_users” playbook
 
 <a href="https://thinkingmonster.files.wordpress.com/2015/04/role3.png"><img class=" size-full wp-image-434 aligncenter" src="https://thinkingmonster.files.wordpress.com/2015/04/role3.png" alt="role3" width="529" height="98" /></a>
 
 <h6>Explaining the concept<h6>
 <span style="text-decoration: underline;"><em>site.yml</em></span>
 
--- When creating a user using my play book I will be running my play book with below command
+- When creating a user using my play book I will be running my play book with below command
 <span style="color: #000080;"><em>ansible-playbook site.yml --extra-vars "username= password= admin=yes action=create_user"</em></span>
 
 Here I am passing all the variables from command line when running site.yml so below code in site.yml assigns the values further to the variable.<br>
@@ -81,13 +81,13 @@ vars:
 ```
 so now “user_password”,”user_name” and “is admin” has the value of input variables.
 
--- In next lines I have called the related roles and have passed these variables to the roles so that they van be used.
+- In next lines I have called the related roles and have passed these variables to the roles so that they van be used.
 ```
 roles:
 { role: usercreate ,upassword: "{{ user_password }}",uusername: "{{ user_name }}",assigned_role: "{{ is_admin }}", when: action == "create_user" }
 { role: userdel ,uusername: "{{ user_name }}", when: action == "delete_user" }
 ```
--- Here “upasswd”,”uusername” and “assigned_role” are the variable defined inside “createuser” role.Check main.yml file of the role inside tasks.
+- Here “upasswd”,”uusername” and “assigned_role” are the variable defined inside “createuser” role.Check main.yml file of the role inside tasks.
 
 So this is the way how variables are passed from the command line across the site.yml and to the roles finally.
 
