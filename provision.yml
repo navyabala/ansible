@@ -1,6 +1,0 @@
----
-- hosts: local
-
-  tasks:
-     - name: Installation of nginx
-       yum: pkg=nginx state=present
