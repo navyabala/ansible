@@ -14,11 +14,10 @@
   when: jenkins_repo_key_url is not defined
 
 # Setup/install tasks.
+- include: javainstall
+
 - include: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
-
-- include: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
 
 # Configure Jenkins init settings.
 - include: settings.yml
