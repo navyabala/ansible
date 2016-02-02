@@ -14,7 +14,7 @@
   when: jenkins_repo_key_url is not defined
 
 # Setup/install tasks.
-- include: javainstall
+- include: javainstall.yml
 
 - include: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
