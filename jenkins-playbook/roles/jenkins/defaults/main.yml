@@ -9,7 +9,6 @@ jenkins_plugins:
   - sonar
   - ssh
   - cobertura
-  - jenkins-ca-agile-central-build-publisher
   - jira
   - job-import-plugin
   - plain-credentials
