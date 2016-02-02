@@ -8,4 +8,15 @@ jenkins_plugins:
   - git
   - sonar
   - ssh
+  - cobertura
+  - jenkins-ca-agile-central-build-publisher
+  - jira
+  - job-import-plugin
+  - plain-credentials
+  - rally-plugin
+  - stash-pullrequest-builder
+  - stashNotifier
+  - token-macro
+  - workflow-step-api
+  - view-job-filters
 jenkins_url_prefix: ""
