@@ -18,4 +18,5 @@ jenkins_plugins:
   - token-macro
   - workflow-step-api
   - view-job-filters
+  - job-dsl
 jenkins_url_prefix: ""
