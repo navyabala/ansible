@@ -1,6 +1,6 @@
 ---
 # Jenkins doesn't allow updates via CLI, though that is required before plugins
-# can be installed via CLI. See: https://gist.github.com/rowan-m/1026918
+# can be installed via CLI. 
 - name: Create Jenkins updates folder.
   file:
     path: /var/lib/jenkins/updates
@@ -26,4 +26,4 @@
     java -jar {{ jenkins_jar_location }} -s http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix | default('') }}/ install-plugin {{ item }}
     creates=/var/lib/jenkins/plugins/{{ item }}.jpi
   with_items: jenkins_plugins
-  notify: restart jenkins
+  #notify: restart jenkins

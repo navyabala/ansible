@@ -12,6 +12,9 @@
   set_fact:
     jenkins_repo_key_url: "{{ __jenkins_repo_key_url }}"
   when: jenkins_repo_key_url is not defined
+  
+#Copies missing files to container required for jenkins run
+- include: container_required.yml 
 
 # Setup/install tasks.
 - include: javainstall.yml

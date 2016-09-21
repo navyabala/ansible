@@ -1,0 +1,38 @@
+# Install Apache Maven, since there is no Maven package in yum and apt repo
+- name: Download Apache Maven
+  get_url: url=http://apache.claz.org/maven/maven-3/{{ maven_version }}/binaries/apache-maven-{{ maven_version }}-bin.tar.gz dest=/tmp/apache-maven-{{ maven_version }}-bin.tar.gz timeout=100
+
+# Untar the downloaded maven
+- name: Untar Maven to /opt
+  shell: chdir=/tmp creates=/opt/maven tar -zxf apache-maven-{{ maven_version }}-bin.tar.gz -C /opt
+
+# Creates symbolic link to the maven installation
+- name: Create symbolic link maven to the /opt/apache-{{ maven_version }}
+  file: src=/opt/apache-maven-{{ maven_version }}  dest=/opt/maven state=link 
+  
+# Changing permissions of maven repo so that jenkins can edit the settings
+
+- name: Editing configuration file
+  file: path=/opt/apache-maven-{{ maven_version }} mode=777 recurse=yes
+  
+# Sets vales of MAVEN_HOME and .M2
+- lineinfile: dest=/etc/profile regexp='^#?\s*export MAVEN_HOME=(.*)$' line='export MAVEN_HOME=/opt/maven' state=present
+- lineinfile: dest=/etc/profile regexp='^#?\s*export PATH=(.*)MAVEN_HOME(.*)$' line="export PATH=$PATH:$MAVEN_HOME/bin" state=present
+
+#Reload /etc/profile
+- name: Reload profile
+  shell: . /etc/profile
+  
+#Create local repository
+- name: Create local repository
+  file: path=/scratch/repository state=directory mode="u=rwx,g=rwx,o=rwx"
+  
+#Places settings file
+- name: Creates setting.xml file 
+  copy: src=nexus_settings.xml dest=/opt/maven/conf/settings.xml
+  when: artifactrepo.nexus
+  
+#Places settings file
+- name: Creates setting.xml file 
+  copy: src=artifactory_settings.xml dest=/opt/maven/conf/settings.xml
+  when: artifactrepo.artifactory

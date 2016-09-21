@@ -1,0 +1,7 @@
+---
+sonar_username: 'sonar'
+sonar_dependencies:
+  - 'java-1.8.0-openjdk'
+  - 'sonar-5.3'
+sonar_repo: 'http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo'
+postgres_repo: 'http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-2.noarch.rpm'

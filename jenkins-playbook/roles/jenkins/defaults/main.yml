@@ -1,7 +1,7 @@
 ---
 jenkins_connection_delay: 5
 jenkins_connection_retries: 60
-jenkins_hostname: ec2-54-152-15-242.compute-1.amazonaws.com
+jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_plugins:
@@ -20,3 +20,6 @@ jenkins_plugins:
   - view-job-filters
   - job-dsl
 jenkins_url_prefix: ""
+
+
+

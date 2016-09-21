@@ -1,0 +1,5 @@
+---
+maven_version: 3.3.9
+artifactrepo:
+   nexus: False
+   artifactory: True
