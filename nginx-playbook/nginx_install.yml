@@ -1,7 +1,0 @@
----
-- hosts: app-servers
-  remote_user: athakur
-
-  roles:
-   - { role: epel }
-   - { role: nginx }

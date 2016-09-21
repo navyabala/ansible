@@ -1,7 +1,0 @@
----
-# Setup/install Java.
-- include: java.yml
-
-#install maven
-- include: maven_install.yml
-  

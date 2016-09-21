@@ -1,3 +1,0 @@
----
-#Installs artifactory
-- include: artifactoryInstallation.yml
