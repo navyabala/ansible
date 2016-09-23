@@ -1,0 +1,5 @@
+---
+- name: Copy functions file
+  copy: src=functions dest=/etc/init.d/functions
+- name: Copy consoletype file
+  copy: src=consoletype dest=/sbin/consoletype

@@ -1,0 +1,13 @@
+---
+# Add sonar repository
+- include: repo.yml
+
+# Install Sonar and dependencies
+- include: dependencies.yml
+
+# Install sonar runner
+- include: runner.yml
+
+# Install sonar plugins
+- include: plugins.yml
+

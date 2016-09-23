@@ -1,0 +1,15 @@
+# Installs java
+- name: Install Java 1.8 JRE
+  yum: name=java-1.8.0-openjdk state=present
+  
+- name: Install Java 1.8 JDK
+  yum: name=java-1.8.0-openjdk-devel state=present
+  
+  
+#Set JAVA_HOME environment variable
+- lineinfile: dest='/etc/profile' regexp='^#?\s*export JAVA_HOME=(.*)$' line='export JAVA_HOME=/usr/lib/jvm/java-openjdk' state=present
+- lineinfile: dest=/etc/profile regexp='^#?\s*export PATH=(.*)JAVA_HOME(.*)$' line="export PATH=$PATH:$JAVA_HOME/bin" state=present
+
+#Reload /etc/profile
+- name: Reload profile
+  shell: . /etc/profile
