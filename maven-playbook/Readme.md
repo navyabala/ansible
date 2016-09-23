@@ -23,7 +23,7 @@ artifactrepo:
 
 Different files and folders used in this playbook can be defined as following.
 
-![Attach_container](https://stash-eng.cisco.com/sjc/shared/1/projects/CVGTOOL/repos/cvg_tools_ansible/browse/images/maven-playbook/maven-playbook-anotamy.png?raw)
+![Attach_container](https://github.com/thinkingmonster/ansible/blob/master/images/maven-playbook/maven-playbook-anotamy.png?raw)
 
 We have below files and structure defined for our playbook.
 
