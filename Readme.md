@@ -16,7 +16,7 @@ docker pull thinkingmonster/centos7-ansible
 docker run -t -p 8085:8080 -i thinkingmonster/centos7-ansible  /bin/bash
 ```
 
-- once you get inside the container create a directory where you can pull these playbooks from stash.<br>
+- once you get inside the container create a directory where you can pull these playbooks from github.<br>
 
 ```
 mkdir /playbooks

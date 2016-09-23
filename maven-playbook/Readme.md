@@ -17,7 +17,7 @@ artifactrepo:
    
 
 - maven_version :- defines the version of maven to be installed.
-- Artifact repo :- Allows you to use any of the artifactory  solution.You can use nexus hosted by cisco by making value  for nexus as true or can also choose artifactory if its also installed on the same  machine,where  maven is installed using this playbook
+- Artifact repo :- Allows you to use any of the artifactory  solution.You can use nexus if installed by making value  for nexus as true or can also choose artifactory if its also installed on the same  machine,where  maven is installed using this playbook
 
 ###Playbook  Anatomy
 
