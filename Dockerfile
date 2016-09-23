@@ -1,8 +1,8 @@
-#To understand some of the concepts related to this file visit at https://stash-eng.cisco.com/sjc/shared/1/projects/CVGTOOL/repos/cvg_tools_ansible/browse/supervisord
+#To understand some of the concepts related to this file visit at https://github.com/thinkingmonster/ansible/tree/master/supervisord
 
-FROM quay.cisco.com/akathaku/cidemo:latest
+FROM thinkingmonster/centos7-ansible
 
-MAINTAINER akathaku <akathaku@cisco.com>
+MAINTAINER akathaku <akathaku@thinkingmonster.com>
 
 USER root
 
