@@ -7,13 +7,13 @@ These playbooks  shall be run inside the docker container but you can also run t
 - Log on to any linux server with  docker installed and running.Pull below mentioned docker image. <br>
 
 ```
-docker pull quay.thinkingmonster.com/akathaku/cidemo
+docker pull thinkingmonster/centos7-ansible
 ```
 
 - This docker image is already having git and ansible installed to it.Once image is pulled start  container using the same.<br>
 
 ```
-docker run -t -p 8085:8080 -i quay.thinkingmonster.com/akathaku/cidemo  /bin/bash
+docker run -t -p 8085:8080 -i thinkingmonster/centos7-ansible  /bin/bash
 ```
 
 - once you get inside the container create a directory where you can pull these playbooks from stash.<br>
@@ -28,10 +28,10 @@ mkdir /playbooks
 git init
 ```
 
-- Pull these  playbooks from the stash <br>
+- Pull these  playbooks from the github <br>
 
 ```
-git pull https://akathaku@stash-eng.thinkingmonster.com/sjc/shared/1/scm/cvgtool/cvg_tools_ansible.git 
+git pull https://github.com/thinkingmonster/ansible.git
 ```
 
 - Get inside any  playbook. In this example we i will explaining with jenkins playbook <br>
