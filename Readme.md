@@ -39,14 +39,14 @@ git pull https://akathaku@stash-eng.thinkingmonster.com/sjc/shared/1/scm/cvgtool
 ```
 cd jenkins-playbook
 ```
-![Get_inside_container](https://stash-eng.thinkingmonster.com/sjc/shared/1/projects/CVGTOOL/repos/cvg_tools_ansible/browse/images/Inside_container.png?raw)
+![Get_inside_container]
 <br>
 - Run below command to run the playbook <br>
 
 ```
 ansible-playbook jenkins.yml
 ```
-![Run_Ansible](https://stash-eng.thinkingmonster.com/sjc/shared/1/projects/CVGTOOL/repos/cvg_tools_ansible/browse/images/Ansible_run.png?raw)
+![Run_Ansible](https://github.com/thinkingmonster/ansible/blob/master/images/Ansible_run.png?raw)
 <br>
 
 
@@ -80,7 +80,7 @@ docker start <containerid>
 ```
 docker attach <containerid>
 ```
-![Attach_container](https://stash-eng.thinkingmonster.com/sjc/shared/1/projects/CVGTOOL/repos/cvg_tools_ansible/browse/images/docker_container.png?raw)
+![Attach_container]
 <br>
 
 Now you are back in your container and  can  start your testing  inside container.Where you exited the container,you will find it in the same stage.With all files intact.You can do a git fetch and can test your changes related to jenkins playbook again.<br>
