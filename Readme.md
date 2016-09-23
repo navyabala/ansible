@@ -52,10 +52,10 @@ ansible-playbook jenkins.yml
 
 - Once you execute the above command,notice that playbook will do following.
 
-[x] Install java.<br>
-[x] Install jenkins.<br>
-[x] Install require plugings in the jenkins.<br>
-[x] stop and start the jenkins.<br>
+- [x] Install java.<br>
+- [x] Install jenkins.<br>
+- [x] Install require plugings in the jenkins.<br>
+- [x] stop and start the jenkins.<br>
 
 - Once Playbook run is done you can access the jenkins by accessing following url in your browser.<br>
 
